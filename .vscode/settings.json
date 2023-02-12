@@ -1,5 +1,6 @@
 {
     "githubPullRequests.ignoredPullRequestBranches": [
-        "Py"
+        "Py",
+        "Python"
     ]
 }
