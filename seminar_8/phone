@@ -1,0 +1,54 @@
+id_client = 0
+# data ={123: ('Sever','Alex','987','male'),
+       # 124: ('Chern','Evg','123','female')}
+       
+phone_book = {}
+
+def menu(data: dict, id_client: int):
+    while True:
+        print('выберите действие: ')
+        print('1- создать новую запись')
+        print('2 - распечатать содержимое справочника')
+        print('3 импортировать данные с текстового файла')
+        
+        get = input('Введите действие: ')
+        if get == '':
+            print('Адьос!')
+            break
+        elif get == '1':
+            id_client += 1
+            data = create (data, id_client, get_data())
+        elif get == '2':
+            print_phone_book(data)
+        elif get == '3':
+            name_file = get_file_name()
+        else:
+            print('Некорректный ввод данных, введите еще раз: ')
+    
+def create(data: dict, id: int, elem: tuple) -> dict: # добавляет запись в существующую книгу
+    data[id] = elem
+    return data
+
+def print_phone_book(data: dict) -> None:
+    for key, values in data.items():
+        print(f'идентификатор: {key}, {values}')
+        
+def get_data() -> tuple:
+    surname = input('введите фамилию: ')
+    name = input('введите имя: ')
+    phone = input('Введите номер телефона: ')
+    discription = input('Введите описание: ')
+    return (surname, name, phone, discription)
+
+def get_file_name() -> str:
+    return input('Введите имя файла: ')
+
+def open_file(name_file: str) -> list:
+    lst = []
+    with open(name_file, 'r', encoding = 'utf-8') as file:
+        for line in file:
+            temp = line.split('#')
+            lst.append(temp)
+    return lst
+             
+menu(phone_book, id_client)
