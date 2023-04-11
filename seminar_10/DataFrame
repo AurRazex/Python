@@ -1,0 +1,8 @@
+import pandas as pd
+import random
+ 
+colorsList = ['white'] * 10
+colorsList += ['black'] * 10
+random.shuffle(colorsList)
+data = pd.DataFrame(colorsList ,columns={'Colors'})
+data.head()
