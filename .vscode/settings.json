@@ -2,5 +2,15 @@
     "githubPullRequests.ignoredPullRequestBranches": [
         "Py",
         "Python"
-    ]
+    ],
+    "docwriter.style": "NumPy",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./seminar_8",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
 }

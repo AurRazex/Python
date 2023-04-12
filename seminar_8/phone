@@ -23,7 +23,7 @@ def menu(data: dict, id_client: int):
         elif get == '3':
             name_file = get_file_name()
             batch_data = get_batch_data(name_file)
-            data = batch_create(batch_data, id_client, )  # type: ignore
+            data = batch_create(data, batch_data, id_client)
         else:
             print('Некорректный ввод данных, введите еще раз: ')
     
@@ -47,16 +47,18 @@ def get_file_name() -> str:
 
 def get_batch_data(name_file: str) -> list:
     lst = []
-    with open(name_file, 'r', encoding = 'utf-8') as file:
+    with open('data01.txt', 'r', encoding = 'utf-8') as file:
         for line in file:
             temp = line.split('#')
             lst.append(temp)
     return lst
 
 def batch_create(data: dict, batch_data, id_client) -> dict:
+    
     for elem in batch_data:
-        result = create(batch_data, id_client, elem)
-    return batch_data
+        data = create(data, id_client, elem)
+        id_client += 1
+    return data
 
 
-# menu(phone_book, id_client)
+menu(phone_book, id_client)
