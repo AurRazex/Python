@@ -55,7 +55,7 @@ def get_batch_data(name_file: str) -> list:
 
 def batch_create(data: dict, batch_data, id_client) -> dict:
     for elem in batch_data:
-        create(batch_data, id_client, elem)
+        result = create(batch_data, id_client, elem)
     return batch_data
 
 
