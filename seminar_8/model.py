@@ -13,7 +13,7 @@ def print_phone_book(data: list) -> None:  # Распечетывает доба
             print_record(el)
 
 def print_record(record: list) -> None:
-    print(f'{record[0]:15s}, {record[1], record[2], record[3]}')
+    print(f'{record[0]}, {record[1]}, {record[2]}, {record[3]}')
 
 def get_data() -> list:
     surname = input('введите фамилию: ')

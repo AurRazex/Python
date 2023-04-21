@@ -4,7 +4,8 @@ def get_file_name() -> str:
 def get_batch_data(name_file: str) -> list:
     lst = []
     with open('data01.txt', 'r', encoding = 'utf-8') as file:
-        lst.extend(list(line.strip().split('#')) for line in file)
+        for line in file:
+            lst.append(list(line.strip().split('#')))
     return lst
 
 def record_data(name_file, data):
