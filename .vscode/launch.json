@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Love",
+            "request": "launch",
+            "mainClass": "Love",
+            "projectName": "Python_1919112d"
+        },
+        {
             "name": "Python: текущий файл",
             "type": "python",
             "request": "launch",
